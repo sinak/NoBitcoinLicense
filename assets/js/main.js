@@ -139,7 +139,7 @@ CallForm.prototype = function() {
 		$.ajax(callPowerCreate, {
 			method: 'GET',
 			data: {
-				campaignId: this.callPowerCampaignId,
+				campaignId: callPowerCampaignId,
 				userLocation: this.getLatLon(),
 				userPhone: this.getPhone(),
 				userCountry: 'US'
