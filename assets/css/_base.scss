@@ -206,7 +206,7 @@ a:focus {
   background: #ff6
 }
 
-/* Footer Section */
+/* Call Tool Section */
 
 .call-tool {
   padding-top: 20px;
@@ -214,6 +214,27 @@ a:focus {
   background: #3a3a3a;
   color: #999;
   }
+
+.call-tool .script {
+  background-color: #ddd;
+  color: #111;
+  text-align: left;
+  margin-top: 30px;
+  padding-right:20px;
+
+  .script-container {
+  }
+  h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1.2em;
+  }
+  p {
+    font-weight: normal;
+    color: #777;
+  }
+}
 
 .call-tool p {
   color: #888;
@@ -273,6 +294,9 @@ a:focus {
   padding: 10px 30px;
   font-size: 30px;
   transition: background-color 0.3s ease;
+  cursor: pointer;
+  cursor: hand;
+  
   &:hover {
     background-color: #7FC9FE;
   }
