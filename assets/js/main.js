@@ -19,7 +19,7 @@ var CallForm = function (formSel) {
 
 CallForm.prototype = function() {
 	var smartyStreetsProxy = 'https://act.eff.org/smarty_streets/street_address/';
-	var callPowerCreate = 'http://52.8.111.36:8000/call/create';
+	var callPowerCreate = 'https://call.eff.org/call/create';
 	var callPowerCampaignId = 2;
 
 	var validateAddress = function() {
