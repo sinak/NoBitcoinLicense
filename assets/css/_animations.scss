@@ -21,3 +21,15 @@ animation-fill-mode: both;
     transform: translate(0, 0);
   }
 }
+
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate(-70px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}

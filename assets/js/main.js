@@ -1,3 +1,7 @@
+/*========================================
+   Call tool
+========================================*/
+
 NoBitcoinLicense = (function($) {
 	var smartyStreetsProxy = 'https://act.eff.org/smarty_streets/street_address/';
 	var callPowerCreate = 'https://call.eff.org/call/create';
@@ -122,4 +126,21 @@ NoBitcoinLicense = (function($) {
 $(document).ready(function() {
 	app = NoBitcoinLicense;
 	app.init();
+});
+
+
+/*========================================
+   Social counts
+========================================*/
+var shareUrl = 'https://nobitcoinlicense.org' || window.location.href;
+$.ajax('https://act.eff.org/tools/social_buttons_count/?networks=facebook,twitter,googleplus&url=' + shareUrl, {
+    success: function(res, err) {
+        $.each(res, function(network, value) {
+            var count = value;
+            if (count / 10000 > 1) {
+                count = Math.ceil(count / 1000) + 'k'
+            }
+            $('[data-network="' + network + '"]').attr('count', count);
+        });
+    }
 });
