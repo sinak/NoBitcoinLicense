@@ -274,6 +274,10 @@ a:focus {
   transition: background-color 0.2s;
 }
 
+.call-tool i.form-control-feedback {
+  top: 35px;
+}
+
 .call-tool .subscribe-input {/*
   float: left;
   width: 70%;

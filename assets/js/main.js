@@ -28,7 +28,10 @@ NoBitcoinLicense = (function($) {
 		phoneField.parent('.form-group')
 			.toggleClass('has-error', !isValid)
 			.toggleClass('has-success', isValid);
-		phone = phoneValDigitsOnly.join('');
+		if (isValid) {
+			phone = phoneValDigitsOnly.join('');
+			phoneField.next('.form-control-feedback').addClass('ion-checkmark');
+		}
 		return isValid;
 	};
 
@@ -54,6 +57,7 @@ NoBitcoinLicense = (function($) {
 				zipcodeField.parent('.form-group')
 					.toggleClass('has-error', !gotLatLon)
 					.toggleClass('has-success', gotLatLon);
+				zipcodeField.next('.form-control-feedback').addClass('ion-checkmark');
 			},
 			error: function(xhr, status, error) {
 				console.error(error);
