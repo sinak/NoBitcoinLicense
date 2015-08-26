@@ -14,7 +14,7 @@ var CallForm = function (formSel) {
 	this.addressField.on("blur", $.proxy(this.validateAddress, this));
 	this.zipcodeField.on("blur", $.proxy(this.lookupAddress, this));
 	this.phoneField.on("blur", $.proxy(this.validatePhone, this));
-	this.callForm.on("submit", $.proxy(this.makeCall, this));
+	this.callForm.on("submit", {self: this}, $.proxy(this.makeCall, this));
 };
 
 CallForm.prototype = function() {
@@ -128,9 +128,8 @@ CallForm.prototype = function() {
 	};
 
 	var makeCall = function(event) {
-		if (event) {
-			event.preventDefault();
-		}
+		var self = this;
+		event.preventDefault();
 		
 		if (!(this.validateAddress() && this.validateZipcode() && this.validatePhone())) {
 			console.err('form invalid');
