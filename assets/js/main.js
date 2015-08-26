@@ -1,6 +1,6 @@
 NoBitcoinLicense = (function($) {
 	var smartyStreetsProxy = 'https://act.eff.org/smarty_streets/street_address/';
-	var callPowerCreate = 'http://9f565e42.ngrok.io/call/create';
+	var callPowerCreate = 'https://call.eff.org/call/create';
 	var callPowerCampaignId = 2;
 
 	var callForm = $('form.call-form');
