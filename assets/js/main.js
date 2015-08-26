@@ -48,7 +48,7 @@ CallForm.prototype = function() {
 			.toggleClass('has-error', !isValid)
 			.toggleClass('has-success', isValid);
 		if (isValid) {
-			phone = num;
+			this.phone = num;
 			this.phoneField.next('.form-control-feedback')
 				.addClass('ion-checkmark')
 				.removeClass('ion-close');
@@ -76,8 +76,8 @@ CallForm.prototype = function() {
 			success: function(data) {
 				var gotLatLon, gotDeliverableAddress = false;
 				if (data[0].metadata) {
-					lat = data[0].metadata.latitude;
-					lon = data[0].metadata.longitude;
+					self.lat = data[0].metadata.latitude;
+					self.lon = data[0].metadata.longitude;
 					gotLatLon = true;
 				}
 				if (data[0].analysis && data[0].analysis.dpv_match_code) {
@@ -162,7 +162,10 @@ CallForm.prototype = function() {
 		validateAddress: validateAddress,
 		validateZipcode: validateZipcode,
 		validatePhone: validatePhone,
-		lookupAddress: lookupAddress
+		lookupAddress: lookupAddress,
+		makeCall: makeCall,
+		getLatLon: getLatLon,
+		getPhone: getPhone
 	};
 } ();
 
