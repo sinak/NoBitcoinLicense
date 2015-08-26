@@ -121,7 +121,6 @@ NoBitcoinLicense = (function($) {
 			event.preventDefault();
 		}
 		
-		console.log('form submit');
 		if (!(validateAddress() && validateZipcode() && validatePhone())) {
 			console.err('form invalid');
 			return false;
