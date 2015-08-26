@@ -1,0 +1,2 @@
+# NoBitcoinLicense
+NoBitcoinLicense.org
