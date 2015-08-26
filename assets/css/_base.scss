@@ -103,6 +103,11 @@ a:focus {
 #main .btc-banner img {
   margin: 0 auto;
   @extend .fadeInUp;
+
+
+  @media (max-width: 767px) {
+    max-width:200px;
+  }
 }
 
 .show {
@@ -140,6 +145,13 @@ ul li {
   font-weight: 900;
   color: #444;
   line-height: 1;
+}
+
+#main .logos img {
+  margin-right:15px;
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 /* White Section */
@@ -228,7 +240,10 @@ ul li {
   color: #111;
   text-align: left;
   margin-top: 30px;
-  padding-right:20px;
+
+  @media (max-width: 767px) {
+    padding:20px;
+  }
 
   .script-container {
   }

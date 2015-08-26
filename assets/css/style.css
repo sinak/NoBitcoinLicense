@@ -141,6 +141,9 @@ a:focus {
 
 #main .btc-banner img {
   margin: 0 auto; }
+  @media (max-width: 767px) {
+    #main .btc-banner img {
+      max-width: 200px; } }
 
 .show {
   opacity: 1; }
@@ -172,6 +175,11 @@ ul li {
   font-weight: 900;
   color: #444;
   line-height: 1; }
+
+#main .logos img {
+  margin-right: 15px; }
+  #main .logos img:last-child {
+    margin-right: 0; }
 
 /* White Section */
 #ws {
@@ -243,8 +251,10 @@ ul li {
   background-color: #ddd;
   color: #111;
   text-align: left;
-  margin-top: 30px;
-  padding-right: 20px; }
+  margin-top: 30px; }
+  @media (max-width: 767px) {
+    .call-tool .script {
+      padding: 20px; } }
   .call-tool .script h3 {
     text-transform: uppercase;
     font-weight: bold;
