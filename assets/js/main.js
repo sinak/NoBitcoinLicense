@@ -35,8 +35,15 @@ NoBitcoinLicense = (function($) {
 			.toggleClass('has-error', !isValid)
 			.toggleClass('has-success', isValid);
 		if (isValid) {
-			phone = phoneValDigitsOnly.join('');
-			phoneField.next('.form-control-feedback').addClass('ion-checkmark');
+			phone = num;
+			phoneField.next('.form-control-feedback')
+				.addClass('ion-checkmark')
+				.removeClass('ion-close');
+
+		} else {
+			phoneField.next('.form-control-feedback')
+				.removeClass('ion-checkmark')
+				.addClass('ion-close');
 		}
 		return isValid;
 	};
@@ -54,16 +61,41 @@ NoBitcoinLicense = (function($) {
 				zipcode: zipcodeField.val()
 			},
 			success: function(data) {
-				var gotLatLon = false;
+				var gotLatLon, gotDeliverableAddress = false;
 				if (data[0].metadata) {
 					lat = data[0].metadata.latitude;
 					lon = data[0].metadata.longitude;
 					gotLatLon = true;
 				}
+				if (data[0].analysis && data[0].analysis.dpv_match_code) {
+					gotDeliverableAddress = true;
+				}
 				zipcodeField.parent('.form-group')
 					.toggleClass('has-error', !gotLatLon)
 					.toggleClass('has-success', gotLatLon);
-				zipcodeField.next('.form-control-feedback').addClass('ion-checkmark');
+				if (gotLatLon) {
+					zipcodeField.next('.form-control-feedback')
+						.addClass('ion-checkmark')
+						.removeClass('ion-close');
+				} else {
+					zipcodeField.next('.form-control-feedback')
+						.removeClass('ion-checkmark')
+						.addClass('ion-close');
+				}
+
+				addressField.parent('.form-group')
+					.toggleClass('has-error', !gotDeliverableAddress)
+					.toggleClass('has-success', gotDeliverableAddress);
+				if (gotDeliverableAddress) {
+					addressField.next('.form-control-feedback')
+						.addClass('ion-checkmark')
+						.removeClass('ion-close');
+				} else {
+					addressField.next('.form-control-feedback')
+						.removeClass('ion-checkmark')
+						.addClass('ion-close');
+				}
+
 			},
 			error: function(xhr, status, error) {
 				console.error(error);
