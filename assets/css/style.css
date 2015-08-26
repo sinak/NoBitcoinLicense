@@ -10,11 +10,13 @@
 	1. GENERAL STRUCTURES
 ################################################################# */
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
-.animated, .fadeInUp, #main .btc-banner img, .floating-share .share-buttons a {
+.animated, .fadeInUp, #main.privacy
+#main .btc-banner img, .floating-share .share-buttons a {
   animation-duration: .5s;
   animation-fill-mode: both; }
 
-.fadeInUp, #main .btc-banner img {
+.fadeInUp, #main.privacy
+#main .btc-banner img {
   opacity: 0;
   animation-name: fadeInUp;
   animation-delay: 0.5s; }
@@ -139,6 +141,7 @@ a:focus {
   background-size: cover;
   padding-top: 40px; }
 
+#main.privacy
 #main .btc-banner img {
   margin: 0 auto; }
 
@@ -147,6 +150,14 @@ a:focus {
 
 .hide {
   opacity: 0; }
+
+ul {
+  font-size: 1.5em;
+  padding-left: 2em;
+  font-weight: 300; }
+
+ul li {
+  margin-bottom: 1em; }
 
 #main {
   background: #ff6;

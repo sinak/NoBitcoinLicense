@@ -100,6 +100,8 @@ a:focus {
   padding-top:40px;
 }
 
+#main.privacy 
+
 #main .btc-banner img {
   margin: 0 auto;
   @extend .fadeInUp;
@@ -113,6 +115,14 @@ a:focus {
   opacity: 0;
 }
 
+ul {
+  font-size: 1.5em;
+  padding-left: 2em;
+  font-weight: 300;
+}
+ul li {
+  margin-bottom: 1em;
+}
 
 #main {
   background: #ff6;
