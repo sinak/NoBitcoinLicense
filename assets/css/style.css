@@ -321,3 +321,11 @@ margin-right: 2px;*/ }
     font-weight: bold;
     letter-spacing: 2px;
     font-size: 1em; }
+
+footer {
+  background-color: #eee;
+  padding: 50px 0;
+  text-align: right; }
+  footer p {
+    font-size: 1.2em;
+    line-height: 1; }

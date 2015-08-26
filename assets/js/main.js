@@ -152,7 +152,8 @@ NoBitcoinLicense = (function($) {
 			zipcodeField.blur(lookupAddress);
 			phoneField.blur(validatePhone);
 			callForm.submit(makeCall);
-		}
+		},
+		getLatLon: getLatLon
 	};
 })(jQuery);
 
