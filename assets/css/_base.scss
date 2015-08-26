@@ -93,28 +93,16 @@ a:focus {
 }
 
 .btc-banner {
-  height: 500px;
-  overflow: hidden;
-  background: #ff6 url('../img/btc-banner.png') no-repeat center center;
+  //height: 500px;
+  // overflow: hidden;
+  //background: #ff6 url('../img/btc-banner.png') no-repeat center center;
   background-size: cover;
+  padding-top:40px;
 }
 
-#main #btc-banner img {
+#main .btc-banner img {
   margin: 0 auto;
-  margin-bottom:20px;
-
   @extend .fadeInUp;
-}
-
-.illustration {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  max-height: 100%;
-  max-width: 100%;
-  opacity: 0;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
 }
 
 .show {
@@ -128,13 +116,14 @@ a:focus {
 
 #main {
   background: #ff6;
+  text-align: center;
 }
 
 #main h1 {
   font-size: 3.7em;
   font-weight: 300;
   line-height: 1;
-  margin-top:1.3em;
+  margin-top:0.5em;
   color: #444;
 }
 
@@ -164,9 +153,6 @@ a:focus {
   color: #929292;
 }
 
-#ws .screenshots {
-  padding-bottom:40px;
-}
 #ws p {
   line-height:1.5;
 }
