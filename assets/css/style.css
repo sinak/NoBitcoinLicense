@@ -1,0 +1,296 @@
+/*
+ * Author: Carlos Alvarez
+ * URL: http://alvarez.is
+ *
+ * Project Name: Landing Sumo - Theme 3
+ * URL: http://LandingSumo.com
+ * Version: 1.0
+ */
+/*	################################################################
+	1. GENERAL STRUCTURES
+################################################################# */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+.animated, .fadeInUp, #main #btc-banner img {
+  animation-duration: .5s;
+  animation-fill-mode: both; }
+
+.fadeInUp, #main #btc-banner img {
+  opacity: 0;
+  animation-name: fadeInUp;
+  animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate(0, 30px); }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0); } }
+/* Import fonts */
+* {
+  margin: 0;
+  padding: 0px;
+  font-family: 'Lato', sans-serif; }
+
+body {
+  background: #fff;
+  margin: 0;
+  color: #444; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700; }
+
+p {
+  padding: 0;
+  margin-bottom: 12px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 34px;
+  color: #666;
+  margin-top: 10px; }
+
+html,
+body {
+  height: 100%; }
+
+.alignleft {
+  float: left; }
+
+.alignright {
+  float: right; }
+
+.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  clear: both; }
+
+.centered {
+  text-align: center; }
+
+.mt {
+  margin-top: 50px; }
+
+.mb {
+  margin-bottom: 50px; }
+
+.mtb {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+
+.ptb {
+  padding-top: 80px;
+  padding-bottom: 80px; }
+
+.clear {
+  clear: both;
+  display: block;
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  width: 100%; }
+
+::-moz-selection {
+  color: #fff;
+  text-shadow: none;
+  background: #2B2E31; }
+
+::selection {
+  color: #fff;
+  text-shadow: none;
+  background: #2B2E31; }
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+a {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  -webkit-transition: background-color .4s linear, color .4s linear;
+  -moz-transition: background-color .4s linear, color .4s linear;
+  -o-transition: background-color .4s linear, color .4s linear;
+  -ms-transition: background-color .4s linear, color .4s linear;
+  transition: background-color .4s linear, color .4s linear; }
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #696E74; }
+
+.btc-banner {
+  height: 500px;
+  overflow: hidden;
+  background: #ffff66 url("../img/btc-banner.png") no-repeat center center;
+  background-size: cover; }
+
+#main #btc-banner img {
+  margin: 0 auto;
+  margin-bottom: 20px; }
+
+.illustration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-height: 100%;
+  max-width: 100%;
+  opacity: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%); }
+
+.show {
+  opacity: 1; }
+
+.hide {
+  opacity: 0; }
+
+#main {
+  background: #ff6; }
+
+#main h1 {
+  font-size: 3.7em;
+  font-weight: 300;
+  line-height: 1;
+  margin-top: 1.3em;
+  color: #444; }
+
+#main h3 {
+  font-size: 2em;
+  font-weight: 900;
+  color: #444;
+  line-height: 1; }
+
+/* White Section */
+#ws {
+  color: #444; }
+
+#ws h1 {
+  font-size: 3.7em;
+  font-weight: 300;
+  line-height: 1.2; }
+
+#ws h2 {
+  font-size: 2.6em;
+  font-weight: 300;
+  line-height: 1.3;
+  color: #929292; }
+
+#ws .screenshots {
+  padding-bottom: 40px; }
+
+#ws p {
+  line-height: 1.5; }
+
+#ws .icn {
+  margin-top: 40px;
+  display: block; }
+
+.icn {
+  font-size: 70px;
+  margin-right: 15px; }
+
+.icn2 {
+  font-size: 60px;
+  margin-right: 15px; }
+
+#ws .price {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border: 3px solid #929292;
+  margin-bottom: 20px; }
+
+#ws .price h1 {
+  font-weight: 700;
+  font-size: 70px; }
+
+#ws .price h6 {
+  font-size: 16px;
+  font-weight: 300; }
+
+#ws .price p {
+  font-size: 22px; }
+
+#ws .price .btn-trans {
+  color: #444;
+  background-color: transparent;
+  border-color: #444;
+  border-width: 2px;
+  font-weight: 700;
+  font-size: 20px; }
+
+#ws .price .btn-trans:hover {
+  background: #ffff66; }
+
+/* Footer Section */
+.call-tool {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  background: #3a3a3a;
+  color: #999; }
+
+.call-tool p {
+  color: #888; }
+
+.call-tool h2 {
+  color: #eee;
+  font-size: 40px; }
+
+.call-tool .form {
+  margin-top: 0;
+  text-align: left; }
+
+.call-tool .form-group {
+  margin-top: 25px; }
+
+.call-tool label {
+  font-size: 1.5em;
+  color: #fff;
+  font-weight: 400; }
+
+.call-tool input {
+  font-size: 18px;
+  min-height: 40px;
+  border-radius: 0px;
+  line-height: 20px;
+  padding: 11px 10px 12px;
+  border: 2px solid #e9f0f2;
+  margin-bottom: 10px;
+  background-color: transparent;
+  color: #ffff66;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
+
+.call-tool .subscribe-input {
+                           /*
+float: left;
+width: 70%;
+text-align: left;
+margin-right: 2px;*/ }
+
+.call-tool .subscribe-submit {
+  right: 0; }
+
+.call-tool .btn-yellow {
+  color: #444;
+  background-color: #ff6;
+  border-color: #444;
+  border-width: 2px;
+  font-weight: 700;
+  padding: 10px 30px;
+  font-size: 30px;
+  transition: background-color 0.3s ease; }
+  .call-tool .btn-yellow:hover {
+    background-color: #7FC9FE; }
+
+#faq h3 {
+  margin-top: 60px; }
