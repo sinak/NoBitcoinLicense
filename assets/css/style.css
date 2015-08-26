@@ -285,6 +285,7 @@ margin-right: 2px;*/ }
   background-color: #ff6;
   border-color: #444;
   border-width: 2px;
+  border-radius: 0;
   font-weight: 700;
   padding: 10px 30px;
   font-size: 30px;
@@ -292,7 +293,28 @@ margin-right: 2px;*/ }
   cursor: pointer;
   cursor: hand; }
   .call-tool .btn-yellow:hover {
-    background-color: #7FC9FE; }
+    background-color: #7FC9FE;
+    cursor: pointer;
+    cursor: hand; }
 
-#faq h3 {
+#explanation h3 {
   margin-top: 60px; }
+
+#explanation .side-call-tool {
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  margin-top: 40px; }
+  #explanation .side-call-tool h3 {
+    margin-top: 10px; }
+  #explanation .side-call-tool p {
+    font-size: 18px; }
+
+.side-call-tool .script {
+  background-color: #ddd;
+  padding: 5px 15px;
+  margin-bottom: 20px; }
+  .side-call-tool .script h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1em; }

@@ -290,20 +290,51 @@ a:focus {
   background-color: #ff6;
   border-color: #444;
   border-width: 2px;
+  border-radius: 0;
   font-weight: 700;
   padding: 10px 30px;
   font-size: 30px;
   transition: background-color 0.3s ease;
   cursor: pointer;
   cursor: hand;
-  
+
   &:hover {
     background-color: #7FC9FE;
+  cursor: pointer;
+  cursor: hand;
   }
 }
 
-#faq {
+
+#explanation {
   h3 {
     margin-top: 60px;
+  }
+}
+
+
+// Side Call Tool
+
+#explanation .side-call-tool {
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  margin-top: 40px;
+  h3 {
+    margin-top:10px;
+  }
+  p {
+    font-size: 18px;
+  }
+}
+
+.side-call-tool .script {
+  background-color: #ddd;
+  padding:5px 15px;
+  margin-bottom: 20px;
+  h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1em;
   }
 }
