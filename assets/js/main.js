@@ -1,3 +1,7 @@
+/*========================================
+   Call tool
+========================================*/
+
 var CallForm = function (formSel) {
 	this.callForm, this.addressField, this.zipcodeField, this.phoneField = null;
 	this.lat, this.lon, this.phone = null;
@@ -162,8 +166,20 @@ CallForm.prototype = function() {
 	};
 } ();
 
-
 $(document).ready(function() {
 	top_form = new CallForm('#call-form-top');
 	bottom_form = new CallForm('#call-form-bottom');
+
+	var shareUrl = 'https://nobitcoinlicense.org' || window.location.href;
+	$.ajax('https://act.eff.org/tools/social_buttons_count/?networks=facebook,twitter,googleplus&url=' + shareUrl, {
+	    success: function(res, err) {
+	        $.each(res, function(network, value) {
+	            var count = value;
+	            if (count / 10000 > 1) {
+	                count = Math.ceil(count / 1000) + 'k'
+	            }
+	            $('[data-network="' + network + '"]').attr('count', count);
+	        });
+	    }
+	});
 });
