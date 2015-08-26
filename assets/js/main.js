@@ -22,9 +22,15 @@ NoBitcoinLicense = (function($) {
 	};
 
 	validatePhone = function() {
-		var phoneValDigitsOnly = phoneField.val().match(/\d/g);
-		var isValid = phoneValDigitsOnly && (phoneValDigitsOnly.length === 10);
-		// just check for 10 digits, don't try to validate number
+		var num = phoneField.val();
+		// remove whitespace, parens
+		num = num.replace(/\s/g, '').replace(/\(/g, '').replace(/\)/g, '');
+		// plus, dashes
+        num = num.replace("+", "").replace(/\-/g, '');
+        // leading 1
+        if (num.charAt(0) == "1")
+            num = num.substr(1);
+        var isValid = (num.length == 10); // ensure just 10 digits remain 
 		phoneField.parent('.form-group')
 			.toggleClass('has-error', !isValid)
 			.toggleClass('has-success', isValid);
