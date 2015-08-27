@@ -6,14 +6,16 @@ var CallForm = function (formSel) {
 	this.callForm, this.addressField, this.zipcodeField, this.phoneField = null;
 	this.lat, this.lon, this.phone = null;
 
-    this.callForm = $(formSel);
+  this.callForm = $(formSel);
 	this.addressField = $(formSel+' input[name=address]');
 	this.zipcodeField = $(formSel+' input[name=zipcode]');
 	this.phoneField = $(formSel+' input[name=phone]');
+	this.reset = $(formSel).siblings('.post-submit').find('.tryagain');
 
 	this.addressField.on("blur", $.proxy(this.validateAddress, this));
 	this.zipcodeField.on("blur", $.proxy(this.lookupAddress, this));
 	this.phoneField.on("blur", $.proxy(this.validatePhone, this));
+	this.reset.on("click", $.proxy(this.resetForm, this));
 	this.callForm.on("submit", {self: this}, $.proxy(this.makeCall, this));
 };
 
@@ -141,19 +143,27 @@ CallForm.prototype = function() {
 			data: {
 				campaignId: callPowerCampaignId,
 				userLocation: this.getLatLon(),
-				userPhone: this.getPhone(),
+				//userPhone: this.getPhone(),
 				userCountry: 'US'
 			},
 			success: function(data) {
-				alert('calling now!');
-				// TODO
-				// show modal overlay?
-				// share links?
+
+
 			},
 			error: function(xhr, status, error){
+				$(event.target).addClass('hidden');
+				var postSubmit = $(event.target).siblings('.post-submit');
+				postSubmit.toggleClass('hidden');
+				postSubmit.children('.share').addClass('revealAfter20Seconds').removeClass('hidden');
 				console.error(error);
 			}
 		});
+	};
+
+	var resetForm = function(event) {
+		console.log(event.target);
+		$(event.target).parents('.post-submit').addClass('hidden');
+		this.callForm.removeClass('hidden');
 	};
 
 	// public interface
@@ -164,7 +174,8 @@ CallForm.prototype = function() {
 		lookupAddress: lookupAddress,
 		makeCall: makeCall,
 		getLatLon: getLatLon,
-		getPhone: getPhone
+		getPhone: getPhone,
+		resetForm: resetForm
 	};
 } ();
 
@@ -174,14 +185,14 @@ $(document).ready(function() {
 
 	var shareUrl = 'https://nobitcoinlicense.org' || window.location.href;
 	$.ajax('https://act.eff.org/tools/social_buttons_count/?networks=facebook,twitter,googleplus&url=' + shareUrl, {
-	    success: function(res, err) {
-	        $.each(res, function(network, value) {
-	            var count = value;
-	            if (count / 10000 > 1) {
-	                count = Math.ceil(count / 1000) + 'k'
-	            }
-	            $('[data-network="' + network + '"]').attr('count', count);
-	        });
-	    }
+    success: function(res, err) {
+        $.each(res, function(network, value) {
+            var count = value;
+            if (count / 10000 > 1) {
+                count = Math.ceil(count / 1000) + 'k';
+            }
+            $('[data-network="' + network + '"]').attr('count', count);
+        });
+    }
 	});
 });

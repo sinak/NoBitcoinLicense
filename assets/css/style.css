@@ -33,7 +33,7 @@
   src: url("/assets/fonts/lato-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/assets/fonts/lato-regular-webfont.woff2") format("woff2"), url("/assets/fonts/lato-regular-webfont.woff") format("woff"), url("/assets/fonts/lato-regular-webfont.ttf") format("truetype"), url("/assets/fonts/lato-regular-webfont.svg#latoregular") format("svg");
   font-weight: normal;
   font-style: normal; }
-.animated, .fadeInUp, #main .btc-banner img, .floating-share .share-buttons a {
+.animated, .fadeInUp, #main .btc-banner img, .reveal, .post-submit .share.revealAfter20Seconds, .floating-share .share-buttons a {
   animation-duration: .5s;
   animation-fill-mode: both; }
 
@@ -42,6 +42,16 @@
   animation-name: fadeInUp;
   animation-delay: 0.5s; }
 
+.reveal, .post-submit .share.revealAfter20Seconds {
+  overflow: hidden;
+  animation-name: reveal; }
+
+@keyframes reveal {
+  0% {
+    max-height: 0px; }
+
+  100% {
+    max-height: 400px; } }
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -198,6 +208,9 @@ ul li {
   color: #444;
   line-height: 1; }
 
+#main .logos {
+  margin-top: 1.5em; }
+
 #main .logos img {
   margin-right: 15px; }
   #main .logos img:last-child {
@@ -347,6 +360,33 @@ margin-right: 2px;*/ }
     background-color: #7FC9FE;
     cursor: pointer;
     cursor: hand; }
+
+.post-submit span.tryagain {
+  cursor: pointer;
+  cursor: hand; }
+  .post-submit span.tryagain:hover {
+    text-decoration: underline; }
+.post-submit .share {
+  margin-top: 2em; }
+.post-submit .share button {
+  margin-bottom: 10px;
+  display: block; }
+
+.post-submit.top {
+  margin-top: 30px; }
+  .post-submit.top p {
+    color: #aaa; }
+  .post-submit.top span.tryagain {
+    color: #fff; }
+  .post-submit.top h3 {
+    color: #fff;
+    font-weight: 400; }
+
+.post-submit.bottom span.tryagain {
+  font-weight: bold; }
+
+.post-submit .share.revealAfter20Seconds {
+  animation-delay: 15s; }
 
 #explanation h3 {
   margin-top: 60px; }

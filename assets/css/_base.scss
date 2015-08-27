@@ -142,7 +142,9 @@ ul li {
   color: #444;
   line-height: 1;
 }
-
+#main .logos {
+  margin-top: 1.5em;
+}
 #main .logos img {
   margin-right:15px;
   &:last-child {
@@ -323,9 +325,49 @@ ul li {
 
   &:hover {
     background-color: #7FC9FE;
-  cursor: pointer;
-  cursor: hand;
+    cursor: pointer;
+    cursor: hand;
   }
+}
+
+.post-submit {
+  span.tryagain { 
+    cursor: pointer;
+    cursor: hand;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .share {
+    margin-top: 2em;
+  }
+  .share button {
+    margin-bottom: 10px;
+    display:block;
+  }
+}
+.post-submit.top {
+  margin-top:30px;
+  p {
+    color: #aaa;
+  }
+  span.tryagain {
+    color: #fff;
+  }
+  h3 {
+    color: #fff;
+    font-weight: 400;
+  }
+}
+.post-submit.bottom {
+  span.tryagain {
+    font-weight:bold;
+  }
+}
+
+.post-submit .share.revealAfter20Seconds {
+  @extend .reveal;
+  animation-delay: 15s;
 }
 
 
