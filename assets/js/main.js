@@ -143,18 +143,16 @@ CallForm.prototype = function() {
 			data: {
 				campaignId: callPowerCampaignId,
 				userLocation: this.getLatLon(),
-				//userPhone: this.getPhone(),
+				userPhone: this.getPhone(),
 				userCountry: 'US'
 			},
 			success: function(data) {
-
-
-			},
-			error: function(xhr, status, error){
 				$(event.target).addClass('hidden');
 				var postSubmit = $(event.target).siblings('.post-submit');
 				postSubmit.toggleClass('hidden');
 				postSubmit.children('.share').addClass('revealAfter20Seconds').removeClass('hidden');
+			},
+			error: function(xhr, status, error){
 				console.error(error);
 			}
 		});
@@ -180,7 +178,7 @@ CallForm.prototype = function() {
 } ();
 
 $(document).ready(function() {
-	
+
 	// Initialize forms
 	top_form = new CallForm('#call-form-top');
 	bottom_form = new CallForm('#call-form-bottom');
