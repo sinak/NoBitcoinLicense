@@ -180,12 +180,14 @@ CallForm.prototype = function() {
 } ();
 
 $(document).ready(function() {
+	
+	// Initialize forms
 	top_form = new CallForm('#call-form-top');
 	bottom_form = new CallForm('#call-form-bottom');
 
+	// Share counts
 	var shareUrl = 'https://nobitcoinlicense.org' || window.location.href;
-	$.ajax('https://act.eff.org/tools/social_buttons_count/?networks=facebook,twitter,googleplus&url=' + shareUrl, {
-    success: function(res, err) {
+	$.ajax('https://act.eff.org/tools/social_buttons_count/?networks=facebook,twitter,googleplus&url=' + shareUrl, { success: function(res, err) {
         $.each(res, function(network, value) {
             var count = value;
             if (count / 10000 > 1) {
@@ -195,4 +197,23 @@ $(document).ready(function() {
         });
     }
 	});
+
+	// Share button popups
+	$(".fblinkthis" ).click(function() {
+		var url = $(this).attr("href");
+		window.open(url, "Share on Facebook", "width=650,height=500");
+		return false;
+	});
+	$( ".twlinkthis" ).click(function() {
+		var url = $(this).attr("href");
+		window.open(url,"Twitter","width=550,height=420");
+		return false;
+	});
+	$( ".gpluslinkthis" ).click(function() {
+		var url = $(this).attr("href");
+		window.open(url,"Share on Google Plus","width=500,height=436");
+		return false;
+	});
 });
+
+
