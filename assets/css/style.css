@@ -82,6 +82,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Lato', sans-serif;
   font-weight: 700; }
 
+@media (max-width: 1133px) and (min-width: 992px) {
+  .container {
+    max-width: 85%; }
+
+  #main p {
+    font-size: 1.5em; } }
 p {
   padding: 0;
   margin-bottom: 12px;
