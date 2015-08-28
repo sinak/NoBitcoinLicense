@@ -49,6 +49,7 @@ body {
 .centered {text-align: center}
 .mt {margin-top: 50px;}
 .mb {margin-bottom: 50px;}
+.pb {padding-bottom: 50px;}
 .mtb {margin-top: 50px; margin-bottom: 50px;}
 .ptb {padding-top: 80px; padding-bottom: 80px;}
 
@@ -130,7 +131,7 @@ ul li {
   margin-bottom: 1em;
 }
 
-#main {
+#main, #highlights-container {
   background: #ff6;
   text-align: center;
 }

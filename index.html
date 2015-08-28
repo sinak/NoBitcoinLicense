@@ -62,21 +62,22 @@
             <img src="assets/img/logo-fftf.png">
           </div>
         </div>
-				
-				<div class="col-md-4 mt">
-					<h3>Threat to innovation.</h3>
-					<p>Bitcoin and other virtual currencies are still in the earliest stages of development. It's too early to create a license like this.</p>
-				</div><!--/col-md-4 -->
+				<div id="highlights">
+  				<div class="col-md-4 mt">
+  					<h3>Threat to innovation.</h3>
+  					<p>Bitcoin and other virtual currencies are still in the earliest stages of development. It's too early to create a license like this.</p>
+  				</div><!--/col-md-4 -->
 
-				<div class="col-md-4 mt">
-					<h3>Technical inaccuracies.</h3>
-					<p>The bill isn't technically accurate, especially as it applies to virtual currencies beyond Bitcoin.</p>
-				</div><!--/col-md-4 -->
+  				<div class="col-md-4 mt">
+  					<h3>Technical inaccuracies.</h3>
+  					<p>The bill isn't technically accurate, especially as it applies to virtual currencies beyond Bitcoin.</p>
+  				</div><!--/col-md-4 -->
 
-        <div class="col-md-4 mt">
-          <h3>No due process.</h3>
-          <p>License applications can be rejected for any reason, with no administrative appeal. This will create difficulties for startups and innovators.</p>
-        </div><!--/col-md-4 -->
+          <div class="col-md-4 mt">
+            <h3>No due process.</h3>
+            <p>License applications can be rejected for any reason, with no administrative appeal. This will create difficulties for startups and innovators.</p>
+          </div><!--/col-md-4 -->
+        </div>
 			</div><!--/row -->
 		</div><!--/container -->
   </div><!-- /.main -->
@@ -257,9 +258,13 @@
     Abba('CTA above fold')
       .control('Below fold', function(){})
       .variant('Above fold', function(){ 
-        $(".call-tool.top").prependTo("body");
+        $(".btc-banner img").attr('width','200').attr('height','auto');
+        $(".call-tool.top").after('<div id="highlights-container" class="pb"><div class="container"></div></div>');
+        $("#main #highlights").appendTo('#highlights-container .container');
        })
       .start();
+
+
   </script>
 
 </body>
