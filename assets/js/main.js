@@ -147,7 +147,7 @@ CallForm.prototype = function() {
 				userCountry: 'US'
 			},
 			success: function(data) {
-	      Abba('Call made').complete();
+				Abba('CTA above fold').complete();
 				$(event.target).addClass('hidden');
 				var postSubmit = $(event.target).siblings('.post-submit');
 				postSubmit.toggleClass('hidden');
