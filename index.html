@@ -26,8 +26,7 @@
       <script src="assets/js/html5shiv.min.js"></script>
       <script src="assets/js/respond.min.js"></script>
     <![endif]-->
-
-
+    
     <!-- OG tags -->
     <meta property="og:title" content="Say No to California's Bitcoin License"/>
     <meta property="og:description" content="The California Senate is considering a dangerous Bitcoin regulation. Take action now to help prevent it."/>
@@ -82,7 +81,7 @@
 		</div><!--/container -->
   </div><!-- /.main -->
         
-  <div class="call-tool">
+  <div class="call-tool top">
     <div class="container">
       <div class="row centered">
         <h2>Call your California Senator now.</h2>
@@ -252,5 +251,16 @@
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/retina-1.1.0.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="//abba.mybluemix.net/v1/abba.js"></script>
+
+  <script>
+    Abba('Above fold')
+      .control('Normal', function(){})
+      .variant('Call at top', function(){ 
+        $(".call-tool.top").prependTo("body");
+       })
+      .start();
+  </script>
+
 </body>
 </html>
