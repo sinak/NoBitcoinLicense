@@ -160,7 +160,6 @@ CallForm.prototype = function() {
 	};
 
 	var resetForm = function(event) {
-		console.log(event.target);
 		$(event.target).parents('.post-submit').addClass('hidden');
 		this.callForm.removeClass('hidden');
 	};
