@@ -184,7 +184,7 @@ $(document).ready(function() {
 	bottom_form = new CallForm('#call-form-bottom');
 
 	// Share counts
-	var shareUrl = 'https://nobitcoinlicense.org' || window.location.href;
+	var shareUrl = 'https://nobitcoinlicense.org/' || window.location.href;
 	$.ajax('https://act.eff.org/tools/social_buttons_count/?networks=facebook,twitter,googleplus&url=' + shareUrl, { success: function(res, err) {
         $.each(res, function(network, value) {
             var count = value;
