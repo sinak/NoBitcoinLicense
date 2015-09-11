@@ -133,7 +133,7 @@ CallForm.prototype = function() {
 		var self = this;
 		event.preventDefault();
 		
-		if (!(this.validateAddress() && this.validateZipcode() && this.validatePhone())) {
+		if (!(this.validateAddress() && this.validateZipcode() && this.validatePhone() && (this.getLatLon().length > 2))) {
 			console.err('form invalid');
 			return false;
 		}
